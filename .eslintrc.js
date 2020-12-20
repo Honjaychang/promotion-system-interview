@@ -3,15 +3,15 @@ module.exports = {
   env: {
     node: true
   },
-  extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
-  ],
+  extends: ['plugin:vue/essential', '@vue/standard'],
   parserOptions: {
     parser: 'babel-eslint'
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'space-before-function-paren': 0, //Missing space before function parentheses
+    'no-unused-vars': 'off', //'Login' is defined but never used  no-unused-vars
+    'handle-callback-err': 'warn' //Expected error to be handled handle-callback-err
   }
 }
