@@ -12,7 +12,7 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 // axios.defaults.baseURL = '/api'
-axios.defaults.baseURL = 'https://xxx.com/api' // 为保证上线项目安全
+axios.defaults.baseURL = 'https://wenling.hzcloudservice.com/api' // 为保证上线项目安全
 // 通过 axios请求拦截器添加 token,保证拥有获取数据的权限。
 axios.interceptors.request.use(config => {
   // console.log(config)
