@@ -276,11 +276,11 @@ export default {
     },
     async getBalance() {
       const { data: res } = await this.$http.get('/message/balance/get')
-      if (res.code !== 200) {
-        return this.$message.error(res.message)
-      }
-      this.balance = res.data.balance
-      // console.log(res)
+      // if (res.code !== 200) {
+      //   return this.$message.error(res.message)
+      // }
+      // this.balance = res.data.balance
+      console.log(res)
     },
     async getTemStatus() {
       const { data: res } = await this.$http.get('/template/status/get')

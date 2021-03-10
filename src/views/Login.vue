@@ -44,8 +44,8 @@ export default {
     return {
       // 表单对象登陆的数据绑定
       loginForm: {
-        passport: 'zhang',
-        password: 'Asd///'
+        passport: 'honjay',
+        password: 'honjay'
       },
       // 用来验证表单对合法性
       loginFormRules: {
@@ -66,16 +66,17 @@ export default {
       this.$refs.loginFormRef.validate(async valid => {
         // console.log(valid)
         // if (!valid) return
+        const { data: res } = await this.$http.post('/login', this.loginForm)
         const result = await this.$http.post('/login', this.loginForm)
         // console.log(result.data)
 
-        if (result.data.code !== 200) {
+        if (res.code !== 200) {
           return this.$message.error('登陆失败,请检查用户名和密码')
         }
         this.$message.success('登陆成功')
-        // console.log(result.data.data.token)
+        // console.log(res.data.token)
         // 将登陆成功后的token，保存到客户端的sessionStorage中（会话性的存放机制）
-        window.sessionStorage.setItem('token', result.data.data.token)
+        window.sessionStorage.setItem('token', res.data.token)
         // 通过编程式导航跳转到后台主页 路由地址是 /home
         this.$router.push('/home')
       })
